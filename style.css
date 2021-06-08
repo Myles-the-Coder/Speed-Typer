@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap");
+
+:root {
+  --background-rgba: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: #0abcf9;
+background-image: linear-gradient(315deg, #0abcf9 0%, #2c69d1 74%);
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.difficulty-container {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--background-rgba);
+  width: 100%;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.difficulty-container h3 {
+  margin-right: 1rem;
+}
+
+.difficulty-container.hide {
+  transform: translateY(-100%);
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+select {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 20rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.speed-typer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(78, 102, 240);
+  color: #fff;
+  box-shadow: 0 0.3rem 0.5rem var(--background-rgba);
+  width: 80vw;
+  max-width: 600px;
+  border-radius: 1rem;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.speed-typer small {
+  font-size: 1.5rem;
+}
+
+.speed-typer .timeout {
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+  animation: shake 5s infinite
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(-5%);
+  }
+
+  50% {
+    transform: translateX(5%);
+  }
+
+  100% {
+    transform: translateX(-5%);
+  }
+}
+
+.speed-typer p {
+  font-size: 2rem;
+}
+
+.title {
+  color: #fff;
+  background-color: var(--background-rgba);
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 30rem;
+  margin-bottom: 5rem;
+}
+
+.word {
+  margin: 0;
+  font-weight: bold;
+  font-size: 4rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  width: 70%;
+  font-size: 1.4rem;
+  border-radius: 0.4rem;
+  padding: 1.2rem 2rem;
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.time-container {
+  position: absolute;
+  top: 12rem;
+  left: 2rem;
+  font-size: 1.5rem;
+}
+
+.score-container {
+  position: absolute;
+  top: 12rem;
+  right: 2rem;
+  font-size: 1.5rem;
+}
+
+.end-game-container {
+  background-color: inherit;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  border-radius: 1rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.play-again {
+  background-color: #fff;
+  padding: 1rem;
+  margin: 1rem;
+  width: 13rem;
+  font-size: 2rem;
+}
+
+.play-again:hover {
+  background: var(--background-rgba);
+  color: #fff
+}
+
+.settings {
+  position: fixed;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  font-size: 2rem;
+  bottom: 2rem;
+  left: 1rem;
+}
+
+.settings:hover {
+  animation: rotate 2s infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
